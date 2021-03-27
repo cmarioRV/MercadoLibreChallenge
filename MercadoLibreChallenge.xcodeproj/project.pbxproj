@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		436C422E179191F71BC912D0 /* Pods_MercadoLibreChallenge_MercadoLibreChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4058046AE4CC7658044BBF35 /* Pods_MercadoLibreChallenge_MercadoLibreChallengeUITests.framework */; };
+		4C6D023A104B905D12B21EB4 /* Pods_MercadoLibreChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF1C1AE0758C65E17EDBE20 /* Pods_MercadoLibreChallengeTests.framework */; };
+		806B2C1380906CE485B4EA8A /* Pods_MercadoLibreChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE230C80D5834D4CC684D73 /* Pods_MercadoLibreChallenge.framework */; };
 		8BD0E250260F535D00D21D1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E24F260F535D00D21D1D /* AppDelegate.swift */; };
 		8BD0E252260F535D00D21D1D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E251260F535D00D21D1D /* SceneDelegate.swift */; };
 		8BD0E254260F535D00D21D1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E253260F535D00D21D1D /* ViewController.swift */; };
@@ -15,6 +18,33 @@
 		8BD0E25C260F535F00D21D1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BD0E25A260F535F00D21D1D /* LaunchScreen.storyboard */; };
 		8BD0E267260F535F00D21D1D /* MercadoLibreChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E266260F535F00D21D1D /* MercadoLibreChallengeTests.swift */; };
 		8BD0E272260F535F00D21D1D /* MercadoLibreChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E271260F535F00D21D1D /* MercadoLibreChallengeUITests.swift */; };
+		8BD0E2A8260F53A300D21D1D /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E287260F53A200D21D1D /* Address.swift */; };
+		8BD0E2A9260F53A300D21D1D /* Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E288260F53A200D21D1D /* Attributes.swift */; };
+		8BD0E2AA260F53A300D21D1D /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E289260F53A200D21D1D /* City.swift */; };
+		8BD0E2AB260F53A300D21D1D /* Installments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E28A260F53A200D21D1D /* Installments.swift */; };
+		8BD0E2AC260F53A300D21D1D /* Json4Swift_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E28B260F53A200D21D1D /* Json4Swift_Base.swift */; };
+		8BD0E2AD260F53A300D21D1D /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E28C260F53A200D21D1D /* State.swift */; };
+		8BD0E2AE260F53A300D21D1D /* Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E28D260F53A200D21D1D /* Paging.swift */; };
+		8BD0E2AF260F53A300D21D1D /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E28E260F53A200D21D1D /* Results.swift */; };
+		8BD0E2B0260F53A300D21D1D /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E28F260F53A200D21D1D /* Country.swift */; };
+		8BD0E2B1260F53A300D21D1D /* Seller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E290260F53A200D21D1D /* Seller.swift */; };
+		8BD0E2B2260F53A300D21D1D /* Shipping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E291260F53A200D21D1D /* Shipping.swift */; };
+		8BD0E2B3260F53A300D21D1D /* Seller_address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E292260F53A200D21D1D /* Seller_address.swift */; };
+		8BD0E2B4260F53A300D21D1D /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E297260F53A300D21D1D /* ApplicationCoordinator.swift */; };
+		8BD0E2B5260F53A300D21D1D /* DeepLinkOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E29A260F53A300D21D1D /* DeepLinkOption.swift */; };
+		8BD0E2B6260F53A300D21D1D /* LaunchInstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E29B260F53A300D21D1D /* LaunchInstructor.swift */; };
+		8BD0E2B7260F53A300D21D1D /* ViewController+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E29D260F53A300D21D1D /* ViewController+Coordinator.swift */; };
+		8BD0E2B8260F53A300D21D1D /* CoordinatorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E29F260F53A300D21D1D /* CoordinatorOutput.swift */; };
+		8BD0E2B9260F53A300D21D1D /* BaseViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E2A0260F53A300D21D1D /* BaseViewControllerProtocol.swift */; };
+		8BD0E2BA260F53A300D21D1D /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E2A1260F53A300D21D1D /* Presentable.swift */; };
+		8BD0E2BB260F53A300D21D1D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E2A2260F53A300D21D1D /* Coordinator.swift */; };
+		8BD0E2BC260F53A300D21D1D /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E2A4260F53A300D21D1D /* BaseCoordinator.swift */; };
+		8BD0E2BD260F53A300D21D1D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E2A6260F53A300D21D1D /* Router.swift */; };
+		8BD0E2C7260F543300D21D1D /* Container+Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E2C2260F543300D21D1D /* Container+Repositories.swift */; };
+		8BD0E2C8260F543300D21D1D /* Container+Apis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E2C3260F543300D21D1D /* Container+Apis.swift */; };
+		8BD0E2C9260F543300D21D1D /* Container+ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E2C4260F543300D21D1D /* Container+ViewModels.swift */; };
+		8BD0E2CA260F543300D21D1D /* Container+Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E2C5260F543300D21D1D /* Container+Services.swift */; };
+		8BD0E2CB260F543300D21D1D /* Container+RegisterDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E2C6260F543300D21D1D /* Container+RegisterDependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +65,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37BDD4B23C65ECED4727ABB0 /* Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests/Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4058046AE4CC7658044BBF35 /* Pods_MercadoLibreChallenge_MercadoLibreChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MercadoLibreChallenge_MercadoLibreChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AF1C1AE0758C65E17EDBE20 /* Pods_MercadoLibreChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MercadoLibreChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ADF912C641BDCC4C26BEDA2 /* Pods-MercadoLibreChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadoLibreChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-MercadoLibreChallengeTests/Pods-MercadoLibreChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		5CBC9119D6D275D997497335 /* Pods-MercadoLibreChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadoLibreChallenge.release.xcconfig"; path = "Target Support Files/Pods-MercadoLibreChallenge/Pods-MercadoLibreChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		5E382F16F2926B7CF145A896 /* Pods-MercadoLibreChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadoLibreChallenge.debug.xcconfig"; path = "Target Support Files/Pods-MercadoLibreChallenge/Pods-MercadoLibreChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		7CE230C80D5834D4CC684D73 /* Pods_MercadoLibreChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MercadoLibreChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F6135A940750C83E66B5CE2 /* Pods-MercadoLibreChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadoLibreChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-MercadoLibreChallengeTests/Pods-MercadoLibreChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8BD0E24C260F535D00D21D1D /* MercadoLibreChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MercadoLibreChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD0E24F260F535D00D21D1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BD0E251260F535D00D21D1D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +87,34 @@
 		8BD0E26D260F535F00D21D1D /* MercadoLibreChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MercadoLibreChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BD0E271260F535F00D21D1D /* MercadoLibreChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercadoLibreChallengeUITests.swift; sourceTree = "<group>"; };
 		8BD0E273260F535F00D21D1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BD0E287260F53A200D21D1D /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		8BD0E288260F53A200D21D1D /* Attributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
+		8BD0E289260F53A200D21D1D /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		8BD0E28A260F53A200D21D1D /* Installments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Installments.swift; sourceTree = "<group>"; };
+		8BD0E28B260F53A200D21D1D /* Json4Swift_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json4Swift_Base.swift; sourceTree = "<group>"; };
+		8BD0E28C260F53A200D21D1D /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		8BD0E28D260F53A200D21D1D /* Paging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paging.swift; sourceTree = "<group>"; };
+		8BD0E28E260F53A200D21D1D /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		8BD0E28F260F53A200D21D1D /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		8BD0E290260F53A200D21D1D /* Seller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seller.swift; sourceTree = "<group>"; };
+		8BD0E291260F53A200D21D1D /* Shipping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shipping.swift; sourceTree = "<group>"; };
+		8BD0E292260F53A200D21D1D /* Seller_address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seller_address.swift; sourceTree = "<group>"; };
+		8BD0E297260F53A300D21D1D /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		8BD0E29A260F53A300D21D1D /* DeepLinkOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLinkOption.swift; sourceTree = "<group>"; };
+		8BD0E29B260F53A300D21D1D /* LaunchInstructor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchInstructor.swift; sourceTree = "<group>"; };
+		8BD0E29D260F53A300D21D1D /* ViewController+Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Coordinator.swift"; sourceTree = "<group>"; };
+		8BD0E29F260F53A300D21D1D /* CoordinatorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorOutput.swift; sourceTree = "<group>"; };
+		8BD0E2A0260F53A300D21D1D /* BaseViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewControllerProtocol.swift; sourceTree = "<group>"; };
+		8BD0E2A1260F53A300D21D1D /* Presentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		8BD0E2A2260F53A300D21D1D /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		8BD0E2A4260F53A300D21D1D /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		8BD0E2A6260F53A300D21D1D /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		8BD0E2C2260F543300D21D1D /* Container+Repositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Container+Repositories.swift"; sourceTree = "<group>"; };
+		8BD0E2C3260F543300D21D1D /* Container+Apis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Container+Apis.swift"; sourceTree = "<group>"; };
+		8BD0E2C4260F543300D21D1D /* Container+ViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Container+ViewModels.swift"; sourceTree = "<group>"; };
+		8BD0E2C5260F543300D21D1D /* Container+Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Container+Services.swift"; sourceTree = "<group>"; };
+		8BD0E2C6260F543300D21D1D /* Container+RegisterDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Container+RegisterDependencies.swift"; sourceTree = "<group>"; };
+		EB9CC0FA53F1386A58552585 /* Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests/Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				806B2C1380906CE485B4EA8A /* Pods_MercadoLibreChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C6D023A104B905D12B21EB4 /* Pods_MercadoLibreChallengeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				436C422E179191F71BC912D0 /* Pods_MercadoLibreChallenge_MercadoLibreChallengeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +152,8 @@
 				8BD0E265260F535F00D21D1D /* MercadoLibreChallengeTests */,
 				8BD0E270260F535F00D21D1D /* MercadoLibreChallengeUITests */,
 				8BD0E24D260F535D00D21D1D /* Products */,
+				A03B92D10B548EB56ED1437D /* Pods */,
+				A470FBC553428A47047F4743 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +170,9 @@
 		8BD0E24E260F535D00D21D1D /* MercadoLibreChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				8BD0E283260F53A200D21D1D /* Classes */,
+				8BD0E2A7260F53A300D21D1D /* Resources */,
+				8BD0E282260F53A200D21D1D /* Supporting Files */,
 				8BD0E24F260F535D00D21D1D /* AppDelegate.swift */,
 				8BD0E251260F535D00D21D1D /* SceneDelegate.swift */,
 				8BD0E253260F535D00D21D1D /* ViewController.swift */,
@@ -128,6 +202,190 @@
 			path = MercadoLibreChallengeUITests;
 			sourceTree = "<group>";
 		};
+		8BD0E282260F53A200D21D1D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8BD0E283260F53A200D21D1D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8BD0E293260F53A200D21D1D /* ApplicationLayer */,
+				8BD0E294260F53A200D21D1D /* PresentationLayer */,
+				8BD0E284260F53A200D21D1D /* BussinessLogicLayer */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8BD0E284260F53A200D21D1D /* BussinessLogicLayer */ = {
+			isa = PBXGroup;
+			children = (
+				8BD0E285260F53A200D21D1D /* Services */,
+				8BD0E286260F53A200D21D1D /* Entities */,
+			);
+			path = BussinessLogicLayer;
+			sourceTree = "<group>";
+		};
+		8BD0E285260F53A200D21D1D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8BD0E286260F53A200D21D1D /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				8BD0E287260F53A200D21D1D /* Address.swift */,
+				8BD0E288260F53A200D21D1D /* Attributes.swift */,
+				8BD0E289260F53A200D21D1D /* City.swift */,
+				8BD0E28A260F53A200D21D1D /* Installments.swift */,
+				8BD0E28B260F53A200D21D1D /* Json4Swift_Base.swift */,
+				8BD0E28C260F53A200D21D1D /* State.swift */,
+				8BD0E28D260F53A200D21D1D /* Paging.swift */,
+				8BD0E28E260F53A200D21D1D /* Results.swift */,
+				8BD0E28F260F53A200D21D1D /* Country.swift */,
+				8BD0E290260F53A200D21D1D /* Seller.swift */,
+				8BD0E291260F53A200D21D1D /* Shipping.swift */,
+				8BD0E292260F53A200D21D1D /* Seller_address.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		8BD0E293260F53A200D21D1D /* ApplicationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				8BD0E2C1260F53ED00D21D1D /* DependencyInjection */,
+			);
+			path = ApplicationLayer;
+			sourceTree = "<group>";
+		};
+		8BD0E294260F53A200D21D1D /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				8BD0E295260F53A200D21D1D /* Coordinator */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		8BD0E295260F53A200D21D1D /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				8BD0E296260F53A300D21D1D /* Coordinators */,
+				8BD0E298260F53A300D21D1D /* BaseCoordinator */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		8BD0E296260F53A300D21D1D /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				8BD0E297260F53A300D21D1D /* ApplicationCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		8BD0E298260F53A300D21D1D /* BaseCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				8BD0E299260F53A300D21D1D /* Enums */,
+				8BD0E29C260F53A300D21D1D /* Extensions */,
+				8BD0E29E260F53A300D21D1D /* Protocols */,
+				8BD0E2A3260F53A300D21D1D /* Base */,
+				8BD0E2A5260F53A300D21D1D /* Router */,
+			);
+			path = BaseCoordinator;
+			sourceTree = "<group>";
+		};
+		8BD0E299260F53A300D21D1D /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				8BD0E29A260F53A300D21D1D /* DeepLinkOption.swift */,
+				8BD0E29B260F53A300D21D1D /* LaunchInstructor.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		8BD0E29C260F53A300D21D1D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8BD0E29D260F53A300D21D1D /* ViewController+Coordinator.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8BD0E29E260F53A300D21D1D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8BD0E29F260F53A300D21D1D /* CoordinatorOutput.swift */,
+				8BD0E2A0260F53A300D21D1D /* BaseViewControllerProtocol.swift */,
+				8BD0E2A1260F53A300D21D1D /* Presentable.swift */,
+				8BD0E2A2260F53A300D21D1D /* Coordinator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8BD0E2A3260F53A300D21D1D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8BD0E2A4260F53A300D21D1D /* BaseCoordinator.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		8BD0E2A5260F53A300D21D1D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8BD0E2A6260F53A300D21D1D /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		8BD0E2A7260F53A300D21D1D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8BD0E2C1260F53ED00D21D1D /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				8BD0E2C3260F543300D21D1D /* Container+Apis.swift */,
+				8BD0E2C6260F543300D21D1D /* Container+RegisterDependencies.swift */,
+				8BD0E2C2260F543300D21D1D /* Container+Repositories.swift */,
+				8BD0E2C5260F543300D21D1D /* Container+Services.swift */,
+				8BD0E2C4260F543300D21D1D /* Container+ViewModels.swift */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		A03B92D10B548EB56ED1437D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E382F16F2926B7CF145A896 /* Pods-MercadoLibreChallenge.debug.xcconfig */,
+				5CBC9119D6D275D997497335 /* Pods-MercadoLibreChallenge.release.xcconfig */,
+				37BDD4B23C65ECED4727ABB0 /* Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests.debug.xcconfig */,
+				EB9CC0FA53F1386A58552585 /* Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests.release.xcconfig */,
+				7F6135A940750C83E66B5CE2 /* Pods-MercadoLibreChallengeTests.debug.xcconfig */,
+				5ADF912C641BDCC4C26BEDA2 /* Pods-MercadoLibreChallengeTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A470FBC553428A47047F4743 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7CE230C80D5834D4CC684D73 /* Pods_MercadoLibreChallenge.framework */,
+				4058046AE4CC7658044BBF35 /* Pods_MercadoLibreChallenge_MercadoLibreChallengeUITests.framework */,
+				4AF1C1AE0758C65E17EDBE20 /* Pods_MercadoLibreChallengeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +393,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BD0E276260F535F00D21D1D /* Build configuration list for PBXNativeTarget "MercadoLibreChallenge" */;
 			buildPhases = (
+				024793FE76D4681AEEAB3F9E /* [CP] Check Pods Manifest.lock */,
 				8BD0E248260F535D00D21D1D /* Sources */,
 				8BD0E249260F535D00D21D1D /* Frameworks */,
 				8BD0E24A260F535D00D21D1D /* Resources */,
+				FFD488142037113A9D79D690 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +412,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BD0E279260F535F00D21D1D /* Build configuration list for PBXNativeTarget "MercadoLibreChallengeTests" */;
 			buildPhases = (
+				F74BE4E4A5AB2A8FCBD33D28 /* [CP] Check Pods Manifest.lock */,
 				8BD0E25E260F535F00D21D1D /* Sources */,
 				8BD0E25F260F535F00D21D1D /* Frameworks */,
 				8BD0E260260F535F00D21D1D /* Resources */,
@@ -170,9 +431,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BD0E27C260F535F00D21D1D /* Build configuration list for PBXNativeTarget "MercadoLibreChallengeUITests" */;
 			buildPhases = (
+				BA7FAFDB0D2D308E868DC446 /* [CP] Check Pods Manifest.lock */,
 				8BD0E269260F535F00D21D1D /* Sources */,
 				8BD0E26A260F535F00D21D1D /* Frameworks */,
 				8BD0E26B260F535F00D21D1D /* Resources */,
+				96681E3D650370F0147DA2BF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,14 +516,144 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		024793FE76D4681AEEAB3F9E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MercadoLibreChallenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96681E3D650370F0147DA2BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests/Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests/Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests/Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA7FAFDB0D2D308E868DC446 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F74BE4E4A5AB2A8FCBD33D28 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MercadoLibreChallengeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFD488142037113A9D79D690 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MercadoLibreChallenge/Pods-MercadoLibreChallenge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MercadoLibreChallenge/Pods-MercadoLibreChallenge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MercadoLibreChallenge/Pods-MercadoLibreChallenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8BD0E248260F535D00D21D1D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8BD0E254260F535D00D21D1D /* ViewController.swift in Sources */,
+				8BD0E2CA260F543300D21D1D /* Container+Services.swift in Sources */,
+				8BD0E2C7260F543300D21D1D /* Container+Repositories.swift in Sources */,
+				8BD0E2AE260F53A300D21D1D /* Paging.swift in Sources */,
+				8BD0E2BD260F53A300D21D1D /* Router.swift in Sources */,
+				8BD0E2AB260F53A300D21D1D /* Installments.swift in Sources */,
 				8BD0E250260F535D00D21D1D /* AppDelegate.swift in Sources */,
+				8BD0E2C9260F543300D21D1D /* Container+ViewModels.swift in Sources */,
+				8BD0E2B0260F53A300D21D1D /* Country.swift in Sources */,
+				8BD0E2AA260F53A300D21D1D /* City.swift in Sources */,
+				8BD0E2A8260F53A300D21D1D /* Address.swift in Sources */,
+				8BD0E2BC260F53A300D21D1D /* BaseCoordinator.swift in Sources */,
+				8BD0E2B8260F53A300D21D1D /* CoordinatorOutput.swift in Sources */,
+				8BD0E2CB260F543300D21D1D /* Container+RegisterDependencies.swift in Sources */,
+				8BD0E2AD260F53A300D21D1D /* State.swift in Sources */,
+				8BD0E2BA260F53A300D21D1D /* Presentable.swift in Sources */,
+				8BD0E2B5260F53A300D21D1D /* DeepLinkOption.swift in Sources */,
+				8BD0E2AF260F53A300D21D1D /* Results.swift in Sources */,
+				8BD0E2B1260F53A300D21D1D /* Seller.swift in Sources */,
+				8BD0E2AC260F53A300D21D1D /* Json4Swift_Base.swift in Sources */,
+				8BD0E2B7260F53A300D21D1D /* ViewController+Coordinator.swift in Sources */,
+				8BD0E2B3260F53A300D21D1D /* Seller_address.swift in Sources */,
+				8BD0E2B2260F53A300D21D1D /* Shipping.swift in Sources */,
+				8BD0E2BB260F53A300D21D1D /* Coordinator.swift in Sources */,
+				8BD0E2A9260F53A300D21D1D /* Attributes.swift in Sources */,
+				8BD0E2B6260F53A300D21D1D /* LaunchInstructor.swift in Sources */,
+				8BD0E2C8260F543300D21D1D /* Container+Apis.swift in Sources */,
 				8BD0E252260F535D00D21D1D /* SceneDelegate.swift in Sources */,
+				8BD0E2B9260F53A300D21D1D /* BaseViewControllerProtocol.swift in Sources */,
+				8BD0E2B4260F53A300D21D1D /* ApplicationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +826,7 @@
 		};
 		8BD0E277260F535F00D21D1D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E382F16F2926B7CF145A896 /* Pods-MercadoLibreChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +846,7 @@
 		};
 		8BD0E278260F535F00D21D1D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CBC9119D6D275D997497335 /* Pods-MercadoLibreChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +866,7 @@
 		};
 		8BD0E27A260F535F00D21D1D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F6135A940750C83E66B5CE2 /* Pods-MercadoLibreChallengeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +889,7 @@
 		};
 		8BD0E27B260F535F00D21D1D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ADF912C641BDCC4C26BEDA2 /* Pods-MercadoLibreChallengeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +912,7 @@
 		};
 		8BD0E27D260F535F00D21D1D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37BDD4B23C65ECED4727ABB0 /* Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +933,7 @@
 		};
 		8BD0E27E260F535F00D21D1D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB9CC0FA53F1386A58552585 /* Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

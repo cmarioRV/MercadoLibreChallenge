@@ -6,14 +6,19 @@
 //
 
 import UIKit
+import Swinject
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
+    static var diContainer = Container()
+    var rootController: UINavigationController {
+        return self.window!.rootViewController as! UINavigationController
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        AppDelegate.diContainer.registerDependencies()
         return true
     }
 
