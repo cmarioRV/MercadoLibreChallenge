@@ -13,18 +13,16 @@ struct SearchViewCellViewModel: CellViewModel {
     let installment: String?
     let deliveryPrice: String?
     let favImageName: String
-    let itemImageName: String
     let thumbnail: String
     
     var cellPressed: (()->Void)?
     
-    init(title: String, price: String, installment: String?, deliveryPrice: String?, favImageName: String, itemImageName: String, thumbnail: String) {
+    init(title: String, price: String, installment: String?, deliveryPrice: String?, favImageName: String, thumbnail: String) {
         self.title = title
         self.price = price
         self.installment = installment
         self.deliveryPrice = deliveryPrice
         self.favImageName = favImageName
-        self.itemImageName = itemImageName
         self.thumbnail = thumbnail
     }
 }

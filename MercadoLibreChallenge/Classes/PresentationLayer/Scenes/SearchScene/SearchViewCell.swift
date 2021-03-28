@@ -24,8 +24,8 @@ class SearchViewCell: UITableViewCell, CellConfigurable {
     
     let titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.numberOfLines = 0
-        lbl.font = FontBuilder().withFontType(type: .titleBold).withSize(size: 28).build()
+        lbl.numberOfLines = 2
+        lbl.font = FontBuilder().withFontType(type: .poppinsRegular).withSize(size: 15).build()
         lbl.textAlignment = .left
         lbl.textColor = .black
         return lbl
@@ -33,8 +33,8 @@ class SearchViewCell: UITableViewCell, CellConfigurable {
     
     let priceLabel: UILabel = {
         let lbl = UILabel()
-        lbl.numberOfLines = 0
-        lbl.font = FontBuilder().withFontType(type: .poppinsMedium).withSize(size: 28).build()
+        lbl.numberOfLines = 1
+        lbl.font = FontBuilder().withFontType(type: .poppinsSemiBold).withSize(size: 15).build()
         lbl.textAlignment = .left
         lbl.textColor = .black
         return lbl
@@ -42,23 +42,23 @@ class SearchViewCell: UITableViewCell, CellConfigurable {
     
     let installmentLabel: UILabel = {
         let lbl = UILabel()
-        lbl.numberOfLines = 0
-        lbl.font = FontBuilder().withFontType(type: .poppinsMedium).withSize(size: 28).build()
+        lbl.numberOfLines = 1
+        lbl.font = FontBuilder().withFontType(type: .poppinsMedium).withSize(size: 9).build()
         lbl.textAlignment = .left
-        lbl.textColor = .black
+        lbl.textColor = .systemGreen
         return lbl
     }()
     
     let deliveryPriceLabel: UILabel = {
         let lbl = UILabel()
-        lbl.numberOfLines = 0
-        lbl.font = FontBuilder().withFontType(type: .poppinsMedium).withSize(size: 28).build()
+        lbl.numberOfLines = 1
+        lbl.font = FontBuilder().withFontType(type: .poppinsMedium).withSize(size: 10).build()
         lbl.textAlignment = .left
-        lbl.textColor = .black
+        lbl.textColor = .systemGreen
         return lbl
     }()
     
-    let favImageView = UIImageView()
+    let favButton = UIButton()
     let itemImageView = UIImageView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -77,8 +77,14 @@ class SearchViewCell: UITableViewCell, CellConfigurable {
         self.priceLabel.text = viewModel.price
         self.installmentLabel.text = viewModel.installment
         self.deliveryPriceLabel.text = viewModel.deliveryPrice
-        self.favImageView.image = UIImage(named: viewModel.favImageName)
-        self.itemImageView.image = UIImage(named: viewModel.itemImageName)
+        
+        if let image = UIImage(named: viewModel.favImageName) {
+            let favImage = image.withRenderingMode(.alwaysTemplate)
+            favButton.setImage(favImage, for: .normal)
+            favButton.imageView?.tintColor = .systemBlue
+        }
+        
+        favButton.addTarget(self, action: #selector(actionFavorite), for: .touchUpInside)
         
         let activityIndicator = UIActivityIndicatorView(style: .medium)
         activityIndicator.hidesWhenStopped = true
@@ -104,30 +110,30 @@ class SearchViewCell: UITableViewCell, CellConfigurable {
         let guides = contentView.safeAreaLayoutGuide
         
         NSLayoutConstraint.activate([
-            itemImageView.leadingAnchor.constraint(equalTo: guides.leadingAnchor, constant: 30),
-            itemImageView.topAnchor.constraint(equalTo: guides.topAnchor, constant: 30),
+            itemImageView.leadingAnchor.constraint(equalTo: guides.leadingAnchor, constant: 20),
+            itemImageView.topAnchor.constraint(equalTo: guides.topAnchor, constant: 20),
             itemImageView.widthAnchor.constraint(equalTo: itemImageView.heightAnchor, multiplier: 1, constant: 0),
-            itemImageView.widthAnchor.constraint(equalTo: guides.widthAnchor, multiplier: 0.2),
+            itemImageView.widthAnchor.constraint(equalTo: guides.widthAnchor, multiplier: 0.28),
             itemImageView.centerYAnchor.constraint(equalTo: guides.centerYAnchor)
         ])
         
-        contentView.addSubview(favImageView)
-        favImageView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(favButton)
+        favButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            favImageView.trailingAnchor.constraint(equalTo: guides.trailingAnchor, constant: -30),
-            favImageView.topAnchor.constraint(equalTo: guides.topAnchor, constant: 30),
-            favImageView.widthAnchor.constraint(equalTo: favImageView.heightAnchor, multiplier: 1, constant: 0),
-            favImageView.widthAnchor.constraint(equalToConstant: 20)
+            favButton.trailingAnchor.constraint(equalTo: guides.trailingAnchor, constant: -20),
+            favButton.topAnchor.constraint(equalTo: guides.topAnchor, constant: 20),
+            favButton.widthAnchor.constraint(equalTo: favButton.heightAnchor, multiplier: 1, constant: 0),
+            favButton.widthAnchor.constraint(equalToConstant: 12)
         ])
         
         contentView.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: itemImageView.trailingAnchor, constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: favImageView.leadingAnchor, constant: 20),
-            stackView.topAnchor.constraint(equalTo: guides.topAnchor, constant: 30),
+            stackView.leadingAnchor.constraint(equalTo: itemImageView.trailingAnchor, constant: 10),
+            stackView.trailingAnchor.constraint(equalTo: favButton.leadingAnchor, constant: -10),
+            stackView.topAnchor.constraint(equalTo: guides.topAnchor, constant: 20),
             stackView.centerYAnchor.constraint(equalTo: guides.centerYAnchor)
         ])
         
@@ -137,5 +143,8 @@ class SearchViewCell: UITableViewCell, CellConfigurable {
         stackView.addArrangedSubview(deliveryPriceLabel)
         
         contentView.layoutIfNeeded()
+    }
+    
+    @objc fileprivate func actionFavorite(_ sender: UIButton) {
     }
 }

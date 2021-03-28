@@ -64,7 +64,7 @@ internal final class SearchViewModel: BaseViewModel, SearchViewModelType, Search
         var viewModels = [SearchViewCellViewModel]()
         
         for result in results {
-            let cellViewModel = SearchViewCellViewModel(title: result.title ?? "", price: getPriceText(result.price), installment: getInstallmentsText(result.installments), deliveryPrice: getShippingText(result.shipping), favImageName: "heartEmpty", itemImageName: "tempImage", thumbnail: result.thumbnail ?? "")
+            let cellViewModel = SearchViewCellViewModel(title: result.title ?? "", price: getPriceText(result.price), installment: getInstallmentsText(result.installments), deliveryPrice: getShippingText(result.shipping), favImageName: "heartEmpty", thumbnail: result.thumbnail ?? "")
 
             viewModels.append(cellViewModel)
         }
@@ -74,12 +74,12 @@ internal final class SearchViewModel: BaseViewModel, SearchViewModelType, Search
     
     private func getPriceText(_ price: Double?) -> String {
         guard let price = price else { return "" }
-        return "$ \(String(format: "%2f", price))"
+        return "$ \(String(format: "%.0f", price))"
     }
     
     private func getInstallmentsText(_ installments: Installments?) -> String? {
         guard let installments = installments, let quantity = installments.quantity, let amount = installments.amount else { return nil }
-        return "[Dummy] \(String(quantity))x $ \(String(format: "%.3f", amount))"
+        return "[Dummy] \(String(quantity))x $ \(String(format: "%.2f", amount))"
     }
     
     private func getShippingText(_ shipping: Shipping?) -> String? {

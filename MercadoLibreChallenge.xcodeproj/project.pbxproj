@@ -92,6 +92,13 @@
 		8BD0E4322610BDD700D21D1D /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E4312610BDD700D21D1D /* CellViewModel.swift */; };
 		8BD0E44C2610D6F800D21D1D /* CellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E44B2610D6F800D21D1D /* CellConfigurable.swift */; };
 		8BD0E4512610D81A00D21D1D /* UITableViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E4502610D81A00D21D1D /* UITableViewCellExtensions.swift */; };
+		8BD0E460261124B000D21D1D /* BebasNeue-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BD0E4282610A9AF00D21D1D /* BebasNeue-Bold.otf */; };
+		8BD0E464261124B200D21D1D /* BebasNeue-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BD0E4252610A9AE00D21D1D /* BebasNeue-Regular.otf */; };
+		8BD0E468261124B500D21D1D /* Nexa-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BD0E4272610A9AF00D21D1D /* Nexa-Bold.otf */; };
+		8BD0E46C261124B700D21D1D /* Nexa-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BD0E4222610A9AE00D21D1D /* Nexa-Light.otf */; };
+		8BD0E470261124BA00D21D1D /* Poppins-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BD0E4262610A9AE00D21D1D /* Poppins-Medium.otf */; };
+		8BD0E474261124BC00D21D1D /* Poppins-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BD0E4232610A9AE00D21D1D /* Poppins-Regular.otf */; };
+		8BD0E478261124BE00D21D1D /* Poppins-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BD0E4242610A9AE00D21D1D /* Poppins-SemiBold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -762,7 +769,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BD0E478261124BE00D21D1D /* Poppins-SemiBold.otf in Resources */,
+				8BD0E470261124BA00D21D1D /* Poppins-Medium.otf in Resources */,
+				8BD0E464261124B200D21D1D /* BebasNeue-Regular.otf in Resources */,
 				8BD0E25C260F535F00D21D1D /* LaunchScreen.storyboard in Resources */,
+				8BD0E468261124B500D21D1D /* Nexa-Bold.otf in Resources */,
+				8BD0E460261124B000D21D1D /* BebasNeue-Bold.otf in Resources */,
+				8BD0E46C261124B700D21D1D /* Nexa-Light.otf in Resources */,
+				8BD0E474261124BC00D21D1D /* Poppins-Regular.otf in Resources */,
 				8BD0E38A260FFCB000D21D1D /* Localizable.strings in Resources */,
 				8BD0E259260F535F00D21D1D /* Assets.xcassets in Resources */,
 			);

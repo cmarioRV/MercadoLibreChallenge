@@ -57,11 +57,13 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
         tableView.dataSource = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
+        let guides = self.view.safeAreaLayoutGuide
+        
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tableView.topAnchor.constraint(equalTo: guides.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: guides.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: guides.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: guides.bottomAnchor)
         ])
         
         view.layoutIfNeeded()
