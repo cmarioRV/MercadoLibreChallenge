@@ -11,6 +11,6 @@ import Swinject
 
 extension Container {
     func registerViewModels() {
-        register(LoginViewModelType.self) {r in LoginViewModel(loginService: r.resolve(LoginService.self)!, databaseService: r.resolve(DatabaseService.self)!)}
+        register(SearchViewModelType.self) {r in SearchViewModel()}
     }
 }

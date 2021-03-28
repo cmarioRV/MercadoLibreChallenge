@@ -4,10 +4,45 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>MercadoLibreChallenge.xcscheme_^#shared#^_</key>
+		<key>MercadoLibreChallenge-DEV.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>8</integer>
+		</dict>
+		<key>MercadoLibreChallenge-MOCKS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>MercadoLibreChallenge-PDN.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
+		<key>MercadoLibreChallenge-STG.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>8BD0E24B260F535D00D21D1D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8BD0E261260F535F00D21D1D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8BD0E26C260F535F00D21D1D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

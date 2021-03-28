@@ -13,12 +13,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     static var diContainer = Container()
-    var rootController: UINavigationController {
-        return self.window!.rootViewController as! UINavigationController
-    }
+    var rootController: UINavigationController = UINavigationController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        AppDelegate.diContainer.registerDependencies()
+        AppDelegate.diContainer.registerDependencies(rootViewController: rootController)
+        window = UIWindow()
+        window?.rootViewController = rootController
+        window?.makeKeyAndVisible()
+        AppDelegate.diContainer.start()
         return true
     }
 

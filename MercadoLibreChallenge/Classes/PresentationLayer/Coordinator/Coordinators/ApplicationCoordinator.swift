@@ -32,7 +32,7 @@ final class ApplicationCoordinator: BaseCoordinator {
     // MARK: - Private methods
     
     private func runAuthFlow() {
-        let coordinator = self.factory.instantiateAuthCoordinator(router: self.router)
+        let coordinator = self.factory.instantiateSearchCoordinator()
         coordinator.finishFlow = { [unowned self, unowned coordinator] in
             self.removeDependency(coordinator)
             self.launchInstructor = LaunchInstructor.configure(isAutorized: true, tutorialWasShown: false)
@@ -43,7 +43,7 @@ final class ApplicationCoordinator: BaseCoordinator {
     }
 
     private func runOnboardingFlow() {
-        let coordinator = self.factory.instantiateWalktroughCoordinator(router: self.router)
+        let coordinator = self.factory.instantiateSearchCoordinator()
         coordinator.finishFlow = { [unowned self, unowned coordinator] in
             self.removeDependency(coordinator)
             self.launchInstructor = LaunchInstructor.configure(isAutorized: true, tutorialWasShown: true)
@@ -54,7 +54,7 @@ final class ApplicationCoordinator: BaseCoordinator {
     }
 
     private func runMainFlow() {
-        let coordinator = self.factory.instantiateSideMenuCoordinator(router: router)
+        let coordinator = self.factory.instantiateSearchCoordinator()
         coordinator.finishFlow = { [unowned self, unowned coordinator] in
             self.removeDependency(coordinator)
             self.launchInstructor = LaunchInstructor.configure()

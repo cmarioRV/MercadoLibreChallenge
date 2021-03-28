@@ -11,7 +11,6 @@ import Swinject
 
 extension Container {
     func registerServices() {
-        register(LoginService.self) {r in LoginService(repository: r.resolve(LoginRepository.self)!)}.inObjectScope(.container)
-        register(UserInfoService.self) {r in UserInfoService(repository: r.resolve(UserInfoRepository.self)!)}
+        register(UserServices.self) {r in UserServices(apiManager: r.resolve(APIManager.self)!)}
     }
 }

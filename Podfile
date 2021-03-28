@@ -9,6 +9,7 @@ target 'MercadoLibreChallenge' do
   pod 'Swinject'
   pod "Connectivity"
   pod 'MBProgressHUD', '~> 1.2.0'
+  pod 'Alamofire'
 
   target 'MercadoLibreChallengeTests' do
     inherit! :search_paths

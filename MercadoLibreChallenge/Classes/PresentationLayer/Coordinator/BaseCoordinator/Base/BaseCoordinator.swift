@@ -9,6 +9,9 @@ import Foundation
 
 class BaseCoordinator: Coordinator {
     
+    typealias Factory = CoordinatorFactoryProtocol & ViewControllerFactory
+    typealias ViewControllerFactory = SearchViewControllerFactory
+    
     // MARK: - Vars & Lets
     
     var childCoordinators = [Coordinator]()

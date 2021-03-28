@@ -8,12 +8,14 @@
 
 import Foundation
 import Swinject
+import UIKit
 
 extension Container {
-    func registerDependencies() {
-        registerRepositories()
-        registerApis()
+    func registerDependencies(rootViewController: UINavigationController) {
         registerServices()
         registerViewModels()
+        registerRouter(root: rootViewController)
+        registerCoordinators()
+        registerViewControllers()
     }
 }

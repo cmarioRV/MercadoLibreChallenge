@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  MercadoLibreChallenge
+
+  Created by Mario Rúa on 27/03/21.
+  
+*/
+
+"default_alert_title" = "Warning";
+"error_alert_title" = "Error";
+"generic_error_message" = "Something went wrong, please try again.";

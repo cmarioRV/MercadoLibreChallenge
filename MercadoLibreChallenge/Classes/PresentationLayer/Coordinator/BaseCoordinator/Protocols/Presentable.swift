@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol Presentable {
     func toPresent() -> UIViewController?
