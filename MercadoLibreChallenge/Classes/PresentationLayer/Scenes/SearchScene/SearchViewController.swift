@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 protocol SearchViewControllerProtocol: class {
     var onFinishWalktrough: (() -> Void)? { get set }
@@ -17,8 +18,7 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
     // MARK: - Vars & Lets
     
     var onFinishWalktrough: (() -> Void)?
-    var viewModel: SearchViewModelType?
-    let cellId = "cellId"
+    var viewModel: SearchViewModelType!
     
     private let tableView = UITableView()
     
@@ -35,9 +35,14 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
         setViews()
         bindViewModel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        viewModel.inputs.search(text: "Motorola%20G6")
     }
     
     // MARK: - Private methods
@@ -45,8 +50,9 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
     private func setViews() {
         view.addSubview(tableView)
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 40
-        tableView.register(SearchViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.estimatedRowHeight = 200
+        tableView.showsVerticalScrollIndicator = false
+        tableView.register(SearchViewCell.self, forCellReuseIdentifier: SearchViewCell.cellIdentifier())
         tableView.delegate = self
         tableView.dataSource = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -73,12 +79,10 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
             }
         })
         
-        viewModel?.outputs.results.bind({ [weak self] (results) in
+        viewModel?.outputs.cellViewModels.bind({ [weak self] (results) in
             guard let weakSelf = self else { return }
             DispatchQueue.main.async {
-                if let results = results {
-                    
-                }
+                weakSelf.tableView.reloadData()
             }
         })
     }
@@ -92,17 +96,34 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return viewModel.outputs.cellViewModels.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! SearchViewCell
-        cell.titleLabel.text = "sadfasdfasd"
-        cell.priceLabel.text = "$344.444"
-        cell.installmentLabel.text = "20 cuotas de 1000"
-        cell.deliveryPriceLabel.text = "Envío gratis"
+        let rowViewModel = viewModel.outputs.cellViewModels.value[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier(for: rowViewModel), for: indexPath)
+
+        if let cell = cell as? CellConfigurable {
+            cell.setup(viewModel: rowViewModel)
+        }
+        
         cell.selectionStyle = .none
+        cell.layoutIfNeeded()
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        delegate?.cellSelected(name: viewModel.outputs.cellViewModels.value[indexPath.row].name)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func cellIdentifier(for viewModel: CellViewModel) -> String {
+        switch viewModel {
+        case is SearchViewCellViewModel:
+            return SearchViewCell.cellIdentifier()
+        default:
+            fatalError("Unexpected view model type: \(viewModel)")
+        }
     }
 }

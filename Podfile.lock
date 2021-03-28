@@ -2,12 +2,16 @@ PODS:
   - Alamofire (5.4.1)
   - Connectivity (5.0.0)
   - MBProgressHUD (1.2.0)
+  - SDWebImage (5.10.4):
+    - SDWebImage/Core (= 5.10.4)
+  - SDWebImage/Core (5.10.4)
   - Swinject (2.7.1)
 
 DEPENDENCIES:
   - Alamofire
   - Connectivity
   - MBProgressHUD (~> 1.2.0)
+  - SDWebImage (~> 5.0)
   - Swinject
 
 SPEC REPOS:
@@ -15,14 +19,16 @@ SPEC REPOS:
     - Alamofire
     - Connectivity
     - MBProgressHUD
+    - SDWebImage
     - Swinject
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   Connectivity: e990703fb8d8db54649ea05facac92000cc0f3eb
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
 
-PODFILE CHECKSUM: 9d7fe053938b5f47b276ec19884e9779b8e76da1
+PODFILE CHECKSUM: 2ebdba2e9d46a1822dcbd93b97f2d4fcbe6aa95d
 
 COCOAPODS: 1.10.1

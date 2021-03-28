@@ -10,6 +10,7 @@ target 'MercadoLibreChallenge' do
   pod "Connectivity"
   pod 'MBProgressHUD', '~> 1.2.0'
   pod 'Alamofire'
+  pod 'SDWebImage', '~> 5.0'
 
   target 'MercadoLibreChallengeTests' do
     inherit! :search_paths

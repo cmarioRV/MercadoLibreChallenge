@@ -10,3 +10,5 @@
 "error_alert_title" = "Error";
 "generic_error_message" = "Something went wrong, please try again.";
 "first_button" = "First button";
+"shipping" = "Shipping";
+"free" = "Free";

@@ -7,12 +7,14 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
-class SearchViewCell: UITableViewCell {
+class SearchViewCell: UITableViewCell, CellConfigurable {
+    
+    var viewModel: SearchViewCellViewModel?
     
     let stackView: UIStackView = {
         let stack = UIStackView()
-        stack.translatesAutoresizingMaskIntoConstraints = false
         stack.alignment = .fill
         stack.axis = .vertical
         stack.spacing = 5
@@ -67,28 +69,56 @@ class SearchViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+     
+    func setup(viewModel: CellViewModel) {
+        guard let viewModel = viewModel as? SearchViewCellViewModel else { return }
+        self.viewModel = viewModel
+        self.titleLabel.text = viewModel.title
+        self.priceLabel.text = viewModel.price
+        self.installmentLabel.text = viewModel.installment
+        self.deliveryPriceLabel.text = viewModel.deliveryPrice
+        self.favImageView.image = UIImage(named: viewModel.favImageName)
+        self.itemImageView.image = UIImage(named: viewModel.itemImageName)
+        
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        self.itemImageView.addSubview(activityIndicator)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerYAnchor.constraint(equalTo: self.itemImageView.centerYAnchor),
+            activityIndicator.centerXAnchor.constraint(equalTo: self.itemImageView.centerXAnchor)
+        ])
+        
+        self.itemImageView.sd_setImage(with: URL(string: viewModel.thumbnail), placeholderImage: UIImage(named: ""), options: .scaleDownLargeImages) { (a, b, c, d) in
+            activityIndicator.stopAnimating()
+        }
+    }
     
     fileprivate func configureContents() {
         
         contentView.addSubview(itemImageView)
-        itemImageView.image = UIImage(named: "tempImage")
         itemImageView.translatesAutoresizingMaskIntoConstraints = false
         
+        let guides = contentView.safeAreaLayoutGuide
+        
         NSLayoutConstraint.activate([
-            itemImageView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 30),
+            itemImageView.leadingAnchor.constraint(equalTo: guides.leadingAnchor, constant: 30),
+            itemImageView.topAnchor.constraint(equalTo: guides.topAnchor, constant: 30),
             itemImageView.widthAnchor.constraint(equalTo: itemImageView.heightAnchor, multiplier: 1, constant: 0),
-            itemImageView.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor, multiplier: 0.4),
-            itemImageView.centerYAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerYAnchor)
+            itemImageView.widthAnchor.constraint(equalTo: guides.widthAnchor, multiplier: 0.2),
+            itemImageView.centerYAnchor.constraint(equalTo: guides.centerYAnchor)
         ])
         
         contentView.addSubview(favImageView)
         favImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            favImageView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: 30),
-            favImageView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 30),
+            favImageView.trailingAnchor.constraint(equalTo: guides.trailingAnchor, constant: -30),
+            favImageView.topAnchor.constraint(equalTo: guides.topAnchor, constant: 30),
             favImageView.widthAnchor.constraint(equalTo: favImageView.heightAnchor, multiplier: 1, constant: 0),
-            favImageView.widthAnchor.constraint(equalTo: widthAnchor, constant: 40)
+            favImageView.widthAnchor.constraint(equalToConstant: 20)
         ])
         
         contentView.addSubview(stackView)
@@ -97,8 +127,8 @@ class SearchViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: itemImageView.trailingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: favImageView.leadingAnchor, constant: 20),
-            stackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 30),
-            stackView.centerYAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerYAnchor)
+            stackView.topAnchor.constraint(equalTo: guides.topAnchor, constant: 30),
+            stackView.centerYAnchor.constraint(equalTo: guides.centerYAnchor)
         ])
         
         stackView.addArrangedSubview(titleLabel)
@@ -106,6 +136,6 @@ class SearchViewCell: UITableViewCell {
         stackView.addArrangedSubview(installmentLabel)
         stackView.addArrangedSubview(deliveryPriceLabel)
         
-        layoutIfNeeded()
+        contentView.layoutIfNeeded()
     }
 }

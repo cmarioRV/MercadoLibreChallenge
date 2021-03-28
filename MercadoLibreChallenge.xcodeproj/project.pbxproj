@@ -88,6 +88,10 @@
 		8BD0E40126109F6A00D21D1D /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E40026109F6A00D21D1D /* UIViewControllerExtensions.swift */; };
 		8BD0E4192610A47100D21D1D /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E4182610A47100D21D1D /* SearchViewCell.swift */; };
 		8BD0E41E2610A94800D21D1D /* FontBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E41D2610A94800D21D1D /* FontBuilder.swift */; };
+		8BD0E42D2610BD8200D21D1D /* SearchViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E42C2610BD8200D21D1D /* SearchViewCellViewModel.swift */; };
+		8BD0E4322610BDD700D21D1D /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E4312610BDD700D21D1D /* CellViewModel.swift */; };
+		8BD0E44C2610D6F800D21D1D /* CellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E44B2610D6F800D21D1D /* CellConfigurable.swift */; };
+		8BD0E4512610D81A00D21D1D /* UITableViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0E4502610D81A00D21D1D /* UITableViewCellExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,6 +212,10 @@
 		8BD0E4262610A9AE00D21D1D /* Poppins-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.otf"; sourceTree = "<group>"; };
 		8BD0E4272610A9AF00D21D1D /* Nexa-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nexa-Bold.otf"; sourceTree = "<group>"; };
 		8BD0E4282610A9AF00D21D1D /* BebasNeue-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Bold.otf"; sourceTree = "<group>"; };
+		8BD0E42C2610BD8200D21D1D /* SearchViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCellViewModel.swift; sourceTree = "<group>"; };
+		8BD0E4312610BDD700D21D1D /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
+		8BD0E44B2610D6F800D21D1D /* CellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurable.swift; sourceTree = "<group>"; };
+		8BD0E4502610D81A00D21D1D /* UITableViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtensions.swift; sourceTree = "<group>"; };
 		EB9CC0FA53F1386A58552585 /* Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests/Pods-MercadoLibreChallenge-MercadoLibreChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -557,6 +565,7 @@
 				8BD0E326260F750A00D21D1D /* SearchViewModel.swift */,
 				8BD0E32B260F752000D21D1D /* SearchViewController.swift */,
 				8BD0E4182610A47100D21D1D /* SearchViewCell.swift */,
+				8BD0E42C2610BD8200D21D1D /* SearchViewCellViewModel.swift */,
 			);
 			path = SearchScene;
 			sourceTree = "<group>";
@@ -605,6 +614,8 @@
 			isa = PBXGroup;
 			children = (
 				8BD0E3FA26109C0E00D21D1D /* BaseViewModel.swift */,
+				8BD0E4312610BDD700D21D1D /* CellViewModel.swift */,
+				8BD0E44B2610D6F800D21D1D /* CellConfigurable.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -614,6 +625,7 @@
 			children = (
 				8BD0E40026109F6A00D21D1D /* UIViewControllerExtensions.swift */,
 				8BD0E394260FFF3F00D21D1D /* StringExtension.swift */,
+				8BD0E4502610D81A00D21D1D /* UITableViewCellExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -904,6 +916,7 @@
 				8BD0E3DC2610960100D21D1D /* Paging.swift in Sources */,
 				8BD0E2F6260F5D2E00D21D1D /* ApiManager.swift in Sources */,
 				8BD0E3E12610960100D21D1D /* City.swift in Sources */,
+				8BD0E4512610D81A00D21D1D /* UITableViewCellExtensions.swift in Sources */,
 				8BD0E314260F630600D21D1D /* Dynamic.swift in Sources */,
 				8BD0E41E2610A94800D21D1D /* FontBuilder.swift in Sources */,
 				8BD0E3E32610960100D21D1D /* Delayed_handling_time.swift in Sources */,
@@ -922,6 +935,7 @@
 				8BD0E3CC2610960100D21D1D /* Filters.swift in Sources */,
 				8BD0E40126109F6A00D21D1D /* UIViewControllerExtensions.swift in Sources */,
 				8BD0E3D42610960100D21D1D /* Attributes.swift in Sources */,
+				8BD0E44C2610D6F800D21D1D /* CellConfigurable.swift in Sources */,
 				8BD0E3E02610960100D21D1D /* Results.swift in Sources */,
 				8BD0E3E52610960100D21D1D /* Presentation.swift in Sources */,
 				8BD0E327260F750A00D21D1D /* SearchViewModel.swift in Sources */,
@@ -935,6 +949,7 @@
 				8BD0E3C72610960100D21D1D /* Path_from_root.swift in Sources */,
 				8BD0E33C260F7F5D00D21D1D /* CoordinatorFactory.swift in Sources */,
 				8BD0E3C82610960100D21D1D /* Country.swift in Sources */,
+				8BD0E4322610BDD700D21D1D /* CellViewModel.swift in Sources */,
 				8BD0E2BB260F53A300D21D1D /* Coordinator.swift in Sources */,
 				8BD0E321260F634700D21D1D /* DynamicAsync.swift in Sources */,
 				8BD0E3DB2610960100D21D1D /* Claims.swift in Sources */,
@@ -953,6 +968,7 @@
 				8BD0E3CB2610960100D21D1D /* SearchResult.swift in Sources */,
 				8BD0E2B9260F53A300D21D1D /* BaseViewControllerProtocol.swift in Sources */,
 				8BD0E2B4260F53A300D21D1D /* ApplicationCoordinator.swift in Sources */,
+				8BD0E42D2610BD8200D21D1D /* SearchViewCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
