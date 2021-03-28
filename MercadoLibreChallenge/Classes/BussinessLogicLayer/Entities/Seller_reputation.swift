@@ -12,38 +12,26 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Seller : Codable {
-	let id : Int?
-	let permalink : String?
-	let registration_date : String?
-	let car_dealer : Bool?
-	let real_estate_agency : Bool?
-	let tags : [String]?
-	let eshop : Eshop?
-	let seller_reputation : Seller_reputation?
+struct Seller_reputation : Codable {
+	let transactions : Transactions?
+	let power_seller_status : String?
+	let metrics : Metrics?
+	let level_id : String?
 
 	enum CodingKeys: String, CodingKey {
 
-		case id = "id"
-		case permalink = "permalink"
-		case registration_date = "registration_date"
-		case car_dealer = "car_dealer"
-		case real_estate_agency = "real_estate_agency"
-		case tags = "tags"
-		case eshop = "eshop"
-		case seller_reputation = "seller_reputation"
+		case transactions = "transactions"
+		case power_seller_status = "power_seller_status"
+		case metrics = "metrics"
+		case level_id = "level_id"
 	}
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		id = try values.decodeIfPresent(Int.self, forKey: .id)
-		permalink = try values.decodeIfPresent(String.self, forKey: .permalink)
-		registration_date = try values.decodeIfPresent(String.self, forKey: .registration_date)
-		car_dealer = try values.decodeIfPresent(Bool.self, forKey: .car_dealer)
-		real_estate_agency = try values.decodeIfPresent(Bool.self, forKey: .real_estate_agency)
-		tags = try values.decodeIfPresent([String].self, forKey: .tags)
-		eshop = try values.decodeIfPresent(Eshop.self, forKey: .eshop)
-		seller_reputation = try values.decodeIfPresent(Seller_reputation.self, forKey: .seller_reputation)
+		transactions = try values.decodeIfPresent(Transactions.self, forKey: .transactions)
+		power_seller_status = try values.decodeIfPresent(String.self, forKey: .power_seller_status)
+		metrics = try values.decodeIfPresent(Metrics.self, forKey: .metrics)
+		level_id = try values.decodeIfPresent(String.self, forKey: .level_id)
 	}
 
 }

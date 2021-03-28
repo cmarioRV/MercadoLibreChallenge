@@ -12,38 +12,29 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Seller : Codable {
-	let id : Int?
-	let permalink : String?
-	let registration_date : String?
-	let car_dealer : Bool?
-	let real_estate_agency : Bool?
-	let tags : [String]?
-	let eshop : Eshop?
-	let seller_reputation : Seller_reputation?
+struct Transactions : Codable {
+	let total : Int?
+	let canceled : Int?
+	let period : String?
+	let ratings : Ratings?
+	let completed : Int?
 
 	enum CodingKeys: String, CodingKey {
 
-		case id = "id"
-		case permalink = "permalink"
-		case registration_date = "registration_date"
-		case car_dealer = "car_dealer"
-		case real_estate_agency = "real_estate_agency"
-		case tags = "tags"
-		case eshop = "eshop"
-		case seller_reputation = "seller_reputation"
+		case total = "total"
+		case canceled = "canceled"
+		case period = "period"
+		case ratings = "ratings"
+		case completed = "completed"
 	}
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		id = try values.decodeIfPresent(Int.self, forKey: .id)
-		permalink = try values.decodeIfPresent(String.self, forKey: .permalink)
-		registration_date = try values.decodeIfPresent(String.self, forKey: .registration_date)
-		car_dealer = try values.decodeIfPresent(Bool.self, forKey: .car_dealer)
-		real_estate_agency = try values.decodeIfPresent(Bool.self, forKey: .real_estate_agency)
-		tags = try values.decodeIfPresent([String].self, forKey: .tags)
-		eshop = try values.decodeIfPresent(Eshop.self, forKey: .eshop)
-		seller_reputation = try values.decodeIfPresent(Seller_reputation.self, forKey: .seller_reputation)
+		total = try values.decodeIfPresent(Int.self, forKey: .total)
+		canceled = try values.decodeIfPresent(Int.self, forKey: .canceled)
+		period = try values.decodeIfPresent(String.self, forKey: .period)
+		ratings = try values.decodeIfPresent(Ratings.self, forKey: .ratings)
+		completed = try values.decodeIfPresent(Int.self, forKey: .completed)
 	}
 
 }

@@ -14,6 +14,7 @@ internal protocol SearchViewModelInputs {
 
 internal protocol SearchViewModelOutputs {
     var isBussy: Dynamic<Bool> { get }
+    var results: Dynamic<SearchResult?> { get }
 }
 
 internal protocol SearchViewModelType {
@@ -21,12 +22,14 @@ internal protocol SearchViewModelType {
     var outputs: SearchViewModelOutputs { get }
 }
 
-internal final class SearchViewModel: SearchViewModelType, SearchViewModelInputs, SearchViewModelOutputs
+internal final class SearchViewModel: BaseViewModel, SearchViewModelType, SearchViewModelInputs, SearchViewModelOutputs
 {
     var inputs: SearchViewModelInputs { return self }
     var outputs: SearchViewModelOutputs { return self }
     
     var isBussy = Dynamic(false)
+    var results: Dynamic<SearchResult?> = Dynamic(nil)
+    
     private let connectivity: Connectivity = Connectivity()
     private let itemServices: ItemServices!
     
@@ -43,8 +46,13 @@ internal final class SearchViewModel: SearchViewModelType, SearchViewModelInputs
         if isBussy.value { return }
         isBussy.value = true
         
-        itemServices.search(params: ["q" : text]) { [weak self] (result, message) in
+        itemServices.search(params: ["q" : text]) { [weak self] (searchResult, alertMessage) in
             self?.isBussy.value = false
+            if let searchResult = searchResult {
+                self?.results.value = searchResult
+            } else {
+                self?.alertMessage.value = alertMessage!
+            }
         }
     }
 }

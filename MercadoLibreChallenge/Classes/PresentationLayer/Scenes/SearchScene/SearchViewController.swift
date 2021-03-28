@@ -53,7 +53,7 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
     }
     
     func bindViewModel() {
-
+//        viewModel.outputs.isBussy
     }
     
     @objc fileprivate func search(_ sender: UIButton){

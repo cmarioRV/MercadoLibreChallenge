@@ -12,7 +12,6 @@ class ItemServices {
     // MARK: - Vars & Lets
     
     private let apiManager: APIManager
-    //private let userServices: UserServices
     
     init(apiManager: APIManager) {
         self.apiManager = apiManager
@@ -32,17 +31,6 @@ class ItemServices {
     /*
     func getProfile(handler: @escaping (_ profile: UserProfile.User?, _ message: AlertMessage?)->()) {
         self.apiManager.call(type: RequestItemsType.getUser) { (profile: UserProfile.User?, message: AlertMessage?) in
-            if let profile = profile {
-                self.userServices.user = profile
-                handler(profile, nil)
-            } else {
-                handler(nil, message!)
-            }
-        }
-    }
-    
-    func updateProfile(params: [String: Any], handler: @escaping (_ profile: UserProfile.User?, _ message: AlertMessage?)->()) {
-        self.apiManager.call(type: RequestItemsType.updateUser, params: params) { (profile: UserProfile.User?, message: AlertMessage?) in
             if let profile = profile {
                 self.userServices.user = profile
                 handler(profile, nil)

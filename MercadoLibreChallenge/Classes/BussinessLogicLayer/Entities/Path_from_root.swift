@@ -12,38 +12,20 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Seller : Codable {
-	let id : Int?
-	let permalink : String?
-	let registration_date : String?
-	let car_dealer : Bool?
-	let real_estate_agency : Bool?
-	let tags : [String]?
-	let eshop : Eshop?
-	let seller_reputation : Seller_reputation?
+struct Path_from_root : Codable {
+	let id : String?
+	let name : String?
 
 	enum CodingKeys: String, CodingKey {
 
 		case id = "id"
-		case permalink = "permalink"
-		case registration_date = "registration_date"
-		case car_dealer = "car_dealer"
-		case real_estate_agency = "real_estate_agency"
-		case tags = "tags"
-		case eshop = "eshop"
-		case seller_reputation = "seller_reputation"
+		case name = "name"
 	}
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		id = try values.decodeIfPresent(Int.self, forKey: .id)
-		permalink = try values.decodeIfPresent(String.self, forKey: .permalink)
-		registration_date = try values.decodeIfPresent(String.self, forKey: .registration_date)
-		car_dealer = try values.decodeIfPresent(Bool.self, forKey: .car_dealer)
-		real_estate_agency = try values.decodeIfPresent(Bool.self, forKey: .real_estate_agency)
-		tags = try values.decodeIfPresent([String].self, forKey: .tags)
-		eshop = try values.decodeIfPresent(Eshop.self, forKey: .eshop)
-		seller_reputation = try values.decodeIfPresent(Seller_reputation.self, forKey: .seller_reputation)
+		id = try values.decodeIfPresent(String.self, forKey: .id)
+		name = try values.decodeIfPresent(String.self, forKey: .name)
 	}
 
 }

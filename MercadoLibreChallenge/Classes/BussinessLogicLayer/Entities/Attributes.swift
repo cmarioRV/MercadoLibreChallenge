@@ -13,37 +13,40 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct Attributes : Codable {
+	let attribute_group_id : String?
+	let id : String?
 	let name : String?
+	let value_struct : Value_struct?
+	let values : [Values]?
 	let value_id : String?
 	let value_name : String?
-	let value_struct : String?
-	let attribute_group_id : String?
 	let attribute_group_name : String?
 	let source : Int?
-	let id : String?
 
 	enum CodingKeys: String, CodingKey {
 
+		case attribute_group_id = "attribute_group_id"
+		case id = "id"
 		case name = "name"
+		case value_struct = "value_struct"
+		case values = "values"
 		case value_id = "value_id"
 		case value_name = "value_name"
-		case value_struct = "value_struct"
-		case attribute_group_id = "attribute_group_id"
 		case attribute_group_name = "attribute_group_name"
 		case source = "source"
-		case id = "id"
 	}
 
 	init(from decoder: Decoder) throws {
-		let values = try decoder.container(keyedBy: CodingKeys.self)
-		name = try values.decodeIfPresent(String.self, forKey: .name)
-		value_id = try values.decodeIfPresent(String.self, forKey: .value_id)
-		value_name = try values.decodeIfPresent(String.self, forKey: .value_name)
-		value_struct = try values.decodeIfPresent(String.self, forKey: .value_struct)
-		attribute_group_id = try values.decodeIfPresent(String.self, forKey: .attribute_group_id)
-		attribute_group_name = try values.decodeIfPresent(String.self, forKey: .attribute_group_name)
-		source = try values.decodeIfPresent(Int.self, forKey: .source)
-		id = try values.decodeIfPresent(String.self, forKey: .id)
+		let decoderValues = try decoder.container(keyedBy: CodingKeys.self)
+		attribute_group_id = try decoderValues.decodeIfPresent(String.self, forKey: .attribute_group_id)
+		id = try decoderValues.decodeIfPresent(String.self, forKey: .id)
+		name = try decoderValues.decodeIfPresent(String.self, forKey: .name)
+		value_struct = try decoderValues.decodeIfPresent(Value_struct.self, forKey: .value_struct)
+		values = try decoderValues.decodeIfPresent([Values].self, forKey: .values)
+		value_id = try decoderValues.decodeIfPresent(String.self, forKey: .value_id)
+		value_name = try decoderValues.decodeIfPresent(String.self, forKey: .value_name)
+		attribute_group_name = try decoderValues.decodeIfPresent(String.self, forKey: .attribute_group_name)
+		source = try decoderValues.decodeIfPresent(Int.self, forKey: .source)
 	}
 
 }
