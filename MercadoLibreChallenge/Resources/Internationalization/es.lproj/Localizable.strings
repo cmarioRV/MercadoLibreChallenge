@@ -9,3 +9,4 @@
 "default_alert_title" = "Advertencia";
 "error_alert_title" = "Error";
 "generic_error_message" = "Algo anduvo mal. Por favor intenta de nuevo.";
+"first_button" = "Primer botón";

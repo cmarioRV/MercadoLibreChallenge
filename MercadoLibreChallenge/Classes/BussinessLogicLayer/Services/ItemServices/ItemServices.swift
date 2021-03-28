@@ -20,7 +20,7 @@ class ItemServices {
     
     // MARK: - Public methods
     func search(params: [String: Any], handler: @escaping (_ searchResult: SearchResult?, _ message: AlertMessage?)->()) {
-        self.apiManager.call(type: RequestItemsType.sites) { (_ searchResult: SearchResult?, _ message: AlertMessage?) in
+        self.apiManager.call(type: RequestItemsType.sites, params: params) { (_ searchResult: SearchResult?, _ message: AlertMessage?) in
             if let searchResult = searchResult {
                 handler(searchResult, nil)
             } else {

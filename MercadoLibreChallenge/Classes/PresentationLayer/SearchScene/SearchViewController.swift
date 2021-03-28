@@ -19,7 +19,7 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
     
     private let firstButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Button", for: .normal)
+        button.setTitle("first_button".localized, for: .normal)
         button.addTarget(self, action: #selector(search), for: .touchUpInside)
         return button
     }()
