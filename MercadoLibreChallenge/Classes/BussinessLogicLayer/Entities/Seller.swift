@@ -19,7 +19,6 @@ struct Seller : Codable {
 	let car_dealer : Bool?
 	let real_estate_agency : Bool?
 	let tags : [String]?
-	let eshop : Eshop?
 	let seller_reputation : Seller_reputation?
 
 	enum CodingKeys: String, CodingKey {
@@ -30,7 +29,6 @@ struct Seller : Codable {
 		case car_dealer = "car_dealer"
 		case real_estate_agency = "real_estate_agency"
 		case tags = "tags"
-		case eshop = "eshop"
 		case seller_reputation = "seller_reputation"
 	}
 
@@ -42,7 +40,6 @@ struct Seller : Codable {
 		car_dealer = try values.decodeIfPresent(Bool.self, forKey: .car_dealer)
 		real_estate_agency = try values.decodeIfPresent(Bool.self, forKey: .real_estate_agency)
 		tags = try values.decodeIfPresent([String].self, forKey: .tags)
-		eshop = try values.decodeIfPresent(Eshop.self, forKey: .eshop)
 		seller_reputation = try values.decodeIfPresent(Seller_reputation.self, forKey: .seller_reputation)
 	}
 

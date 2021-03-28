@@ -14,7 +14,6 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 import Foundation
 struct Eshop : Codable {
 	let nick_name : String?
-	let eshop_rubro : String?
 	let eshop_id : Int?
 	let eshop_locations : [String]?
 	let site_id : String?
@@ -26,7 +25,6 @@ struct Eshop : Codable {
 	enum CodingKeys: String, CodingKey {
 
 		case nick_name = "nick_name"
-		case eshop_rubro = "eshop_rubro"
 		case eshop_id = "eshop_id"
 		case eshop_locations = "eshop_locations"
 		case site_id = "site_id"
@@ -39,7 +37,6 @@ struct Eshop : Codable {
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		nick_name = try values.decodeIfPresent(String.self, forKey: .nick_name)
-		eshop_rubro = try values.decodeIfPresent(String.self, forKey: .eshop_rubro)
 		eshop_id = try values.decodeIfPresent(Int.self, forKey: .eshop_id)
 		eshop_locations = try values.decodeIfPresent([String].self, forKey: .eshop_locations)
 		site_id = try values.decodeIfPresent(String.self, forKey: .site_id)

@@ -21,6 +21,7 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
     var viewModel: SearchViewModelType!
     
     private let tableView = UITableView()
+    let searchController = UISearchController(searchResultsController: nil)
     
     private let contentView: UIView = {
         let view = UIView()
@@ -41,8 +42,6 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        viewModel.inputs.search(text: "Motorola%20G6")
     }
     
     // MARK: - Private methods
@@ -65,6 +64,12 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
             tableView.trailingAnchor.constraint(equalTo: guides.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: guides.bottomAnchor)
         ])
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "search_here".localized
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
         
         view.layoutIfNeeded()
     }
@@ -126,6 +131,14 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             return SearchViewCell.cellIdentifier()
         default:
             fatalError("Unexpected view model type: \(viewModel)")
+        }
+    }
+}
+
+extension SearchViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if searchController.searchBar.text!.count > 2 {
+            viewModel.inputs.search(text: searchController.searchBar.text!)
         }
     }
 }
