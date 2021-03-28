@@ -14,22 +14,21 @@ protocol SearchViewControllerProtocol: class {
 
 class SearchViewController: UIViewController, SearchViewControllerProtocol {
     
+    // MARK: - Vars & Lets
+    
     var onFinishWalktrough: (() -> Void)?
     var viewModel: SearchViewModelType?
+    let cellId = "cellId"
     
-    private let firstButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("first_button".localized, for: .normal)
-        button.addTarget(self, action: #selector(search), for: .touchUpInside)
-        return button
-    }()
+    private let tableView = UITableView()
     
     private let contentView: UIView = {
         let view = UIView()
-        view.backgroundColor = .green
         return view
     }()
 
+    // MARK: - Controller lifecycle
+    
     override func loadView() {
         view = contentView
     }
@@ -41,18 +40,28 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
         bindViewModel()
     }
     
-    func setViews() {
-        view.addSubview(firstButton)
-        firstButton.translatesAutoresizingMaskIntoConstraints = false
+    // MARK: - Private methods
+    
+    private func setViews() {
+        view.addSubview(tableView)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 40
+        tableView.register(SearchViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            firstButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            firstButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        
         view.layoutIfNeeded()
     }
     
-    func bindViewModel() {
+    private func bindViewModel() {
         viewModel?.outputs.isBussy.bind({ [weak self] (isBussy) in
             guard let weakSelf = self else { return }
             DispatchQueue.main.async {
@@ -74,7 +83,26 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
         })
     }
     
-    @objc fileprivate func search(_ sender: UIButton){
+    // MARK: - Actions
+//    signUpButton.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
+    @objc fileprivate func actionSearch(_ sender: UIButton){
         viewModel?.inputs.search(text: "Motorola%20G6")
+    }
+}
+
+extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! SearchViewCell
+        cell.titleLabel.text = "sadfasdfasd"
+        cell.priceLabel.text = "$344.444"
+        cell.installmentLabel.text = "20 cuotas de 1000"
+        cell.deliveryPriceLabel.text = "Envío gratis"
+        cell.selectionStyle = .none
+        
+        return cell
     }
 }
