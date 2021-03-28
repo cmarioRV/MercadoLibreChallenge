@@ -53,7 +53,25 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
     }
     
     func bindViewModel() {
-//        viewModel.outputs.isBussy
+        viewModel?.outputs.isBussy.bind({ [weak self] (isBussy) in
+            guard let weakSelf = self else { return }
+            DispatchQueue.main.async {
+                if isBussy {
+                    weakSelf.showSpinner()
+                } else {
+                    weakSelf.removeSpinner()
+                }
+            }
+        })
+        
+        viewModel?.outputs.results.bind({ [weak self] (results) in
+            guard let weakSelf = self else { return }
+            DispatchQueue.main.async {
+                if let results = results {
+                    
+                }
+            }
+        })
     }
     
     @objc fileprivate func search(_ sender: UIButton){
