@@ -23,8 +23,8 @@ enum RequestItemsType {
     
     // MARK: User
     
-    case getUser
-    case updateUser
+    case sites
+    case users
     
 }
 
@@ -37,9 +37,9 @@ extension RequestItemsType: EndPointType {
     
     var baseURL: String {
         switch APIManager.networkEnviroment {
-            case .dev: return "https://private-ab878b-mediumsoa.apiary-mock.com/"
-            case .production: return "https://private-ab878b-mediumsoa.apiary-mock.com/"
-            case .stage: return "https://private-ab878b-mediumsoa.apiary-mock.com/"
+            case .dev: return "https://api.mercadolibre.com/"
+            case .production: return "https://api.mercadolibre.com/"
+            case .stage: return "https://api.mercadolibre.com/"
         }
     }
     
@@ -51,17 +51,15 @@ extension RequestItemsType: EndPointType {
         switch self {
         case .events(_):
             return "event"
-        case .getUser:
-            return "user"
-        case .updateUser:
-            return "user"
+        case .sites:
+            return "sites"
+        case .users:
+            return "users"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .updateUser:
-            return .post
         default:
             return .get
         }
@@ -78,12 +76,28 @@ extension RequestItemsType: EndPointType {
     var url: URL {
         switch self {
         default:
-            return URL(string: self.baseURL + self.path)!
+            return URL(string: "\(self.baseURL)\(self.path)/\(self.siteId)/\(query)")!
+        }
+    }
+    
+    var siteId: String {
+        switch self {
+        default:
+            return "MLA"
+        }
+    }
+    
+    var query: String {
+        switch self {
+        default:
+            return "search"
         }
     }
     
     var encoding: ParameterEncoding {
         switch self {
+        case .sites:
+            return URLEncoding.default
         default:
             return JSONEncoding.default
         }

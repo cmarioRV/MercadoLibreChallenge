@@ -19,6 +19,16 @@ class ItemServices {
     }
     
     // MARK: - Public methods
+    func search(params: [String: Any], handler: @escaping (_ searchResult: SearchResult?, _ message: AlertMessage?)->()) {
+        self.apiManager.call(type: RequestItemsType.sites) { (_ searchResult: SearchResult?, _ message: AlertMessage?) in
+            if let searchResult = searchResult {
+                handler(searchResult, nil)
+            } else {
+                handler(nil, message!)
+            }
+        }
+    }
+    
     /*
     func getProfile(handler: @escaping (_ profile: UserProfile.User?, _ message: AlertMessage?)->()) {
         self.apiManager.call(type: RequestItemsType.getUser) { (profile: UserProfile.User?, message: AlertMessage?) in

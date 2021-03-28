@@ -18,5 +18,5 @@ protocol EndPointType {
     var url: URL { get }
     var encoding: ParameterEncoding { get }
     var version: String { get }
-    
+    var siteId: String { get }
 }

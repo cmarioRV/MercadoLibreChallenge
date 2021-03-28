@@ -12,6 +12,7 @@ import UIKit
 
 extension Container {
     func registerDependencies(rootViewController: UINavigationController) {
+        registerNetworkingComponents()
         registerServices()
         registerViewModels()
         registerRouter(root: rootViewController)

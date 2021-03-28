@@ -11,6 +11,6 @@ import Swinject
 
 extension Container {
     func registerServices() {
-        register(UserServices.self) {r in UserServices(apiManager: r.resolve(APIManager.self)!)}
+        register(ItemServices.self) {r in ItemServices(apiManager: r.resolve(APIManager.self)!)}
     }
 }

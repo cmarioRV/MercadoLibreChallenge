@@ -27,4 +27,10 @@ class APIManagerRetrier: RequestInterceptor {
             self.numberOfRetries = 0
         }
     }
+    
+    func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
+            var urlRequest = urlRequest
+            urlRequest.setValue("Bearer " + "IHopeToPassChallengeToGetThisTokenByImplementingANicePattern", forHTTPHeaderField: "Authorization")
+            completion(.success(urlRequest))
+        }
 }
