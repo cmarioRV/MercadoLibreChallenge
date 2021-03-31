@@ -11,6 +11,8 @@ target 'MercadoLibreChallenge' do
   pod 'MBProgressHUD', '~> 1.2.0'
   pod 'Alamofire'
   pod 'SDWebImage', '~> 5.0'
+  pod 'Cosmos'
+  pod 'TinyConstraints'
 
   target 'MercadoLibreChallengeTests' do
     inherit! :search_paths

@@ -32,7 +32,7 @@ class FontBuilder {
         return self
     }
     
-    func build() -> UIFont? {
-        return UIFont.init(name: fontType.rawValue, size: fontSize)
+    func build() -> UIFont {
+        return UIFont.init(name: fontType.rawValue, size: fontSize) ?? UIFont.systemFont(ofSize: fontSize)
     }
 }

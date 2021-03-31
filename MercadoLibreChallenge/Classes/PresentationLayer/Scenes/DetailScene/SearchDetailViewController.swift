@@ -1,26 +1,18 @@
 //
-//  SearchViewController.swift
+//  SearchDetailViewController.swift
 //  MercadoLibreChallenge
 //
-//  Created by Mario Rúa on 27/03/21.
+//  Created by Mario Rúa on 28/03/21.
 //
 
 import Foundation
 import UIKit
-import SDWebImage
 
-protocol SearchViewControllerProtocol: class {
-    var onShowSearchDetail: ((Results) -> Void)? { get set }
-}
+class SearchDetailViewController: UIViewController {
+    var viewModel: SearchDetailViewModelType!
+    var result: Results?
 
-class SearchViewController: UIViewController, SearchViewControllerProtocol {
-    // MARK: - Vars & Lets
-    
-    var onShowSearchDetail: ((Results) -> Void)?
-    var viewModel: SearchViewModelType!
-    
     private let tableView = UITableView()
-    let searchController = UISearchController(searchResultsController: nil)
     
     private let contentView: UIView = {
         let view = UIView()
@@ -37,20 +29,20 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
         super.viewDidLoad()
         setViews()
         bindViewModel()
+        
+        guard let result = result else { return }
+        viewModel.inputs.loadResult(result: result)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    // MARK: - Private methods
     
     private func setViews() {
         view.addSubview(tableView)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200
         tableView.showsVerticalScrollIndicator = false
-        tableView.register(SearchViewCell.self, forCellReuseIdentifier: SearchViewCell.cellIdentifier())
+        tableView.register(DetailImageCell.self, forCellReuseIdentifier: DetailImageCell.cellIdentifier())
+        tableView.register(DetailPriceCell.self, forCellReuseIdentifier: DetailPriceCell.cellIdentifier())
+        tableView.register(DetailSellerCell.self, forCellReuseIdentifier: DetailSellerCell.cellIdentifier())
+        tableView.register(SearchDetailFooterView.self, forHeaderFooterViewReuseIdentifier: "tableViewFooter")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -63,14 +55,6 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
             tableView.trailingAnchor.constraint(equalTo: guides.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: guides.bottomAnchor)
         ])
-        
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "search_here".localized
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
-        
-        view.layoutIfNeeded()
     }
     
     private func bindViewModel() {
@@ -92,17 +76,20 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
             }
         })
     }
-    
-    // MARK: - Actions
-//    signUpButton.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
-    @objc fileprivate func actionSearch(_ sender: UIButton){
-        viewModel?.inputs.search(text: "Motorola%20G6")
-    }
 }
 
-extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.outputs.cellViewModels.value.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return section == 1 ? 70 : 0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "tableViewFooter") as! SearchDetailFooterView
+        return view
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -120,24 +107,19 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        onShowSearchDetail?(viewModel.outputs.searchResults.value[indexPath.row])
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func cellIdentifier(for viewModel: CellViewModel) -> String {
         switch viewModel {
-        case is SearchViewCellViewModel:
-            return SearchViewCell.cellIdentifier()
+        case is DetailImageCellViewModel:
+            return DetailImageCell.cellIdentifier()
+        case is DetailPriceCellViewModel:
+            return DetailPriceCell.cellIdentifier()
+        case is DetailSellerCellViewModel:
+            return DetailSellerCell.cellIdentifier()
         default:
             fatalError("Unexpected view model type: \(viewModel)")
-        }
-    }
-}
-
-extension SearchViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        if searchController.searchBar.text!.count > 2 {
-            viewModel.inputs.search(text: searchController.searchBar.text!)
         }
     }
 }

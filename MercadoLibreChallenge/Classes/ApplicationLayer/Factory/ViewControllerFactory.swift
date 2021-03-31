@@ -9,4 +9,5 @@ import Foundation
 
 protocol SearchViewControllerFactory {
     func instantiateSearchViewController() -> SearchViewController
+    func instantiateSearchDetailViewController() -> SearchDetailViewController
 }

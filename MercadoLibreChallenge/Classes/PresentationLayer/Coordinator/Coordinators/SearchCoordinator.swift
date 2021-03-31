@@ -22,10 +22,17 @@ final class SearchCoordinator: BaseCoordinator, CoordinatorFinishOutput {
     
     private func showSearchViewController() {
         let searchViewController = self.factory.instantiateSearchViewController()
-        searchViewController.onFinishWalktrough = { [unowned self] in
-            self.finishFlow?()
+        searchViewController.onShowSearchDetail = { [unowned self] result in
+            self.showSearchDetailViewController(result: result)
         }
-        self.router.push(searchViewController)
+//        self.router.push(searchViewController)
+        self.router.setRootModule(searchViewController, hideBar: false)
+    }
+    
+    private func showSearchDetailViewController(result: Results) {
+        let searchDetailViewController = self.factory.instantiateSearchDetailViewController()
+        searchDetailViewController.result = result
+        self.router.push(searchDetailViewController)
     }
     
     // MARK: - Coordinator

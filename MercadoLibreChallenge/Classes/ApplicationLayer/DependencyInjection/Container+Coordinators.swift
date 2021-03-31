@@ -10,8 +10,8 @@ import Swinject
 
 extension Container {    
     func registerCoordinators() {
-        register(ApplicationCoordinator.self) {r in ApplicationCoordinator(router: r.resolve(RouterProtocol.self)!, factory: self, launchInstructor: LaunchInstructor.configure())}
-        register(SearchCoordinator.self) {r in SearchCoordinator(router: r.resolve(RouterProtocol.self)!, factory: self)}
+        register(ApplicationCoordinator.self) {r in ApplicationCoordinator(router: r.resolve(RouterProtocol.self)!, factory: self, launchInstructor: LaunchInstructor.configure())}.inObjectScope(.container)
+        register(SearchCoordinator.self) {r in SearchCoordinator(router: r.resolve(RouterProtocol.self)!, factory: self)}.inObjectScope(.container)
     }
     
     func start() {

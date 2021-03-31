@@ -14,11 +14,20 @@ extension Container {
             .initCompleted { (r, vc) in
                 vc.viewModel = r.resolve(SearchViewModelType.self)
             }
+        
+        register(SearchDetailViewController.self) {r in SearchDetailViewController()}
+            .initCompleted { (r, vc) in
+                vc.viewModel = r.resolve(SearchDetailViewModelType.self)
+            }
     }
 }
 
 extension Container: SearchViewControllerFactory {
     func instantiateSearchViewController() -> SearchViewController {
         return resolve(SearchViewController.self)!
+    }
+    
+    func instantiateSearchDetailViewController() -> SearchDetailViewController {
+        return resolve(SearchDetailViewController.self)!
     }
 }

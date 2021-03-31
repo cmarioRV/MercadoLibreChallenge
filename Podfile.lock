@@ -1,34 +1,42 @@
 PODS:
   - Alamofire (5.4.1)
   - Connectivity (5.0.0)
+  - Cosmos (23.0.0)
   - MBProgressHUD (1.2.0)
   - SDWebImage (5.10.4):
     - SDWebImage/Core (= 5.10.4)
   - SDWebImage/Core (5.10.4)
   - Swinject (2.7.1)
+  - TinyConstraints (4.0.1)
 
 DEPENDENCIES:
   - Alamofire
   - Connectivity
+  - Cosmos
   - MBProgressHUD (~> 1.2.0)
   - SDWebImage (~> 5.0)
   - Swinject
+  - TinyConstraints
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Connectivity
+    - Cosmos
     - MBProgressHUD
     - SDWebImage
     - Swinject
+    - TinyConstraints
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   Connectivity: e990703fb8d8db54649ea05facac92000cc0f3eb
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+  TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
 
-PODFILE CHECKSUM: 2ebdba2e9d46a1822dcbd93b97f2d4fcbe6aa95d
+PODFILE CHECKSUM: 3131209738a2cc9c876af8c71ec7fceedd314e94
 
 COCOAPODS: 1.10.1

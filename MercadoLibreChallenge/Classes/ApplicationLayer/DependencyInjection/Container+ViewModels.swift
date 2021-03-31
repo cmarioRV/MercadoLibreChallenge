@@ -12,5 +12,6 @@ import Swinject
 extension Container {
     func registerViewModels() {
         register(SearchViewModelType.self) {r in SearchViewModel(itemServices: r.resolve(ItemServices.self)!)}
+        register(SearchDetailViewModelType.self) {r in SearchDetailViewModel()}
     }
 }

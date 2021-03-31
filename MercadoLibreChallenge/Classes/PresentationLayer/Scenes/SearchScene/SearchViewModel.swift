@@ -15,6 +15,7 @@ internal protocol SearchViewModelInputs {
 internal protocol SearchViewModelOutputs {
     var isBussy: Dynamic<Bool> { get }
     var cellViewModels: Dynamic<[SearchViewCellViewModel]> { get }
+    var searchResults: Dynamic<[Results]> { get }
 }
 
 internal protocol SearchViewModelType {
@@ -29,6 +30,7 @@ internal final class SearchViewModel: BaseViewModel, SearchViewModelType, Search
     
     var isBussy = Dynamic(false)
     var cellViewModels: Dynamic<[SearchViewCellViewModel]>
+    var searchResults: Dynamic<[Results]>
     
     private let connectivity: Connectivity = Connectivity()
     private let itemServices: ItemServices!
@@ -36,6 +38,7 @@ internal final class SearchViewModel: BaseViewModel, SearchViewModelType, Search
     init(itemServices: ItemServices) {
         self.itemServices = itemServices
         self.cellViewModels = Dynamic([SearchViewCellViewModel]())
+        self.searchResults = Dynamic([Results]())
         connectivity.startNotifier()
     }
     
@@ -50,6 +53,9 @@ internal final class SearchViewModel: BaseViewModel, SearchViewModelType, Search
         itemServices.search(params: ["q" : text]) { [weak self] (searchResult, alertMessage) in
             guard let weakSelf = self else { return }
             if let searchResult = searchResult {
+                if let result = searchResult.results {
+                    weakSelf.searchResults.value = result
+                }
                 weakSelf.cellViewModels.value = weakSelf.buildCellViewModels(searchResult: searchResult)
             } else {
                 weakSelf.alertMessage.value = alertMessage!
