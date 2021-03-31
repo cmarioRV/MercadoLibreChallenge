@@ -37,6 +37,7 @@ class DetailImageCell: UITableViewCell, CellConfigurable {
             activityIndicator.centerXAnchor.constraint(equalTo: self.itemImageView.centerXAnchor)
         ])
         
+        self.itemImageView.contentMode = .scaleAspectFit
         self.itemImageView.sd_setImage(with: URL(string: viewModel.imageURLString), placeholderImage: UIImage(named: ""), options: .scaleDownLargeImages) { (a, b, c, d) in
             activityIndicator.stopAnimating()
         }

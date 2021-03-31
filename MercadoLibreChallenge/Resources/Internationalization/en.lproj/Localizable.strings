@@ -7,8 +7,6 @@
 */
 
 "default_alert_title" = "Warning";
-"error_alert_title" = "Error";
-"generic_error_message" = "Something went wrong, please try again.";
 "first_button" = "First button";
 "shipping" = "Shipping";
 "free" = "Free";
@@ -16,3 +14,13 @@
 "add_to_cart" = "Add to cart";
 "rate" = "Rate";
 "sales" = "Sales";
+
+////---- Errors ----////
+"error_title" = "¡Ups!";
+"error_unknown" = "Something went wrong, please try again";
+
+// NetworkingErrors
+"error_connection" = "It seems there is not connection";
+
+// SearchErrors
+"error_no_results" = "No results for query";

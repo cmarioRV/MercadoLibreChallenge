@@ -11,9 +11,9 @@ struct DetailSellerCellViewModel: CellViewModel {
     let salesTitle: String
     let salesValue: Int
     let ratingTitle: String
-    let ratingValue: Int
+    let ratingValue: Double
     
-    init(salesTitle: String, salesValue: Int, ratingTitle: String, ratingValue: Int) {
+    init(salesTitle: String, salesValue: Int, ratingTitle: String, ratingValue: Double) {
         self.salesTitle = salesTitle
         self.salesValue = salesValue
         self.ratingTitle = ratingTitle

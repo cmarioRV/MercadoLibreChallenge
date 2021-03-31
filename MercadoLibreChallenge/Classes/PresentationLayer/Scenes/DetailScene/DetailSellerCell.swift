@@ -49,7 +49,7 @@ class DetailSellerCell: UITableViewCell, CellConfigurable {
     let salesTitleLabel: UILabel = {
         let lbl = UILabel()
         lbl.numberOfLines = 0
-        lbl.font = FontBuilder().withFontType(type: .poppinsRegular).withSize(size: 15).build()
+        lbl.font = FontBuilder().withFontType(type: .poppinsMedium).withSize(size: 18).build()
         lbl.textAlignment = .left
         lbl.textColor = .black
         return lbl
@@ -67,10 +67,8 @@ class DetailSellerCell: UITableViewCell, CellConfigurable {
     
     let ratingView: CosmosView = {
         let v = CosmosView()
-        v.settings.filledImage = UIImage(named: "starFilled")?.withRenderingMode(.alwaysTemplate)
-        v.tintColor = .orange
-        v.settings.emptyImage = UIImage(named: "starEmpty")?.withRenderingMode(.alwaysTemplate)
-        v.tintColor = .orange
+        v.settings.filledImage = UIImage(named: "starFilled")?.withRenderingMode(.alwaysOriginal)
+        v.settings.emptyImage = UIImage(named: "starEmpty")?.withRenderingMode(.alwaysOriginal)
         v.settings.totalStars = 5
         v.settings.starSize = 17
         v.settings.starMargin = 3.3
@@ -78,7 +76,6 @@ class DetailSellerCell: UITableViewCell, CellConfigurable {
         v.settings.updateOnTouch = false
         
         v.text = "rate".localized
-        v.settings.textColor = .black
         v.settings.textFont = FontBuilder().withFontType(type: .poppinsRegular).withSize(size: 15).build()
         v.settings.textMargin = 10
         return v
@@ -99,6 +96,7 @@ class DetailSellerCell: UITableViewCell, CellConfigurable {
         
         salesTitleLabel.text = viewModel.salesTitle
         salesValueLabel.text = String(viewModel.salesValue)
+        ratingView.rating = Double(viewModel.ratingValue)
     }
     
     fileprivate func configureContents() {

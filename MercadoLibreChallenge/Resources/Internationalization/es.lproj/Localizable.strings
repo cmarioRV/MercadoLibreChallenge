@@ -7,8 +7,6 @@
 */
 
 "default_alert_title" = "Advertencia";
-"error_alert_title" = "Error";
-"generic_error_message" = "Algo anduvo mal. Por favor intenta de nuevo.";
 "first_button" = "Primer botón";
 "shipping" = "Envío";
 "free" = "Gratis";
@@ -16,3 +14,13 @@
 "add_to_cart" = "Agregar al carrito";
 "rate" = "Calificación";
 "sales" = "Vendidos";
+
+////---- Errors ----////
+"error_title" = "¡Ups!";
+"error_unknown" = "No sabemos que pudo pasar, por favor intenta nuevamente";
+
+// NetworkingErrors
+"error_connection" = "Parece que no tienes conexión";
+
+// SearchErrors
+"error_no_results" = "La búsqueda no arrojó resultados";

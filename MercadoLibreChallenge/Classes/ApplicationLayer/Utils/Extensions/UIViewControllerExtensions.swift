@@ -31,6 +31,15 @@ extension UIViewController {
             aView = nil
         }
     }
+    
+    func showAlertWith(title: String, body: String, style: UIAlertController.Style = .alert) {
+        let alertController = UIAlertController(title: title, message: body, preferredStyle: style)
+        let action = UIAlertAction(title: "Ok", style: .default) { (action) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        alertController.addAction(action)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
 
 extension UIViewController: Presentable {

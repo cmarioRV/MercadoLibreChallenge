@@ -23,7 +23,7 @@ class DetailPriceCell: UITableViewCell, CellConfigurable {
     let priceLabel: UILabel = {
         let lbl = UILabel()
         lbl.numberOfLines = 0
-        lbl.font = FontBuilder().withFontType(type: .poppinsRegular).withSize(size: 15).build()
+        lbl.font = FontBuilder().withFontType(type: .poppinsSemiBold).withSize(size: 28).build()
         lbl.textAlignment = .left
         lbl.textColor = .black
         return lbl
@@ -32,9 +32,9 @@ class DetailPriceCell: UITableViewCell, CellConfigurable {
     let installmentsLabel: UILabel = {
         let lbl = UILabel()
         lbl.numberOfLines = 0
-        lbl.font = FontBuilder().withFontType(type: .poppinsRegular).withSize(size: 15).build()
+        lbl.font = FontBuilder().withFontType(type: .poppinsSemiBold).withSize(size: 20).build()
         lbl.textAlignment = .left
-        lbl.textColor = .black
+        lbl.textColor = .systemGreen
         return lbl
     }()
     

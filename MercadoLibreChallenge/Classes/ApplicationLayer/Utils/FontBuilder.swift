@@ -9,13 +9,9 @@ import Foundation
 import UIKit
 
 public enum FontType: String {
-    case titleBold = "NexaBold"
-    case titleLight = "NexaLight"
     case poppinsSemiBold = "Poppins-SemiBold"
     case poppinsRegular = "Poppins-Regular"
     case poppinsMedium = "Poppins-Medium"
-    case bebasBold = "BebasNeue-Bold"
-    case bebasRegular = "BebasNeue-Regular"
 }
 
 class FontBuilder {

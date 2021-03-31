@@ -57,7 +57,7 @@ internal final class SearchDetailViewModel: BaseViewModel, SearchDetailViewModel
         
         let imageCellViewModel = DetailImageCellViewModel(imageURLString: result.thumbnail ?? "")
         let priceCellViewModel = DetailPriceCellViewModel(price: getPriceText(result.price), installments: getInstallmentsText(result.installments))
-        let sellerCellViewModel = DetailSellerCellViewModel(salesTitle: "sales".localized, salesValue: result.seller?.seller_reputation?.transactions?.completed ?? 0, ratingTitle: "rate".localized, ratingValue: Int(result.seller?.seller_reputation?.transactions?.ratings?.positive ?? 0 * 5))
+        let sellerCellViewModel = DetailSellerCellViewModel(salesTitle: "sales".localized, salesValue: result.seller?.seller_reputation?.transactions?.completed ?? 0, ratingTitle: "rate".localized, ratingValue: getRating(calification: result.seller?.seller_reputation?.transactions?.ratings?.positive, starCount: 5))
         
         viewModels.append(imageCellViewModel)
         viewModels.append(priceCellViewModel)
@@ -74,5 +74,10 @@ internal final class SearchDetailViewModel: BaseViewModel, SearchDetailViewModel
     private func getInstallmentsText(_ installments: Installments?) -> String? {
         guard let installments = installments, let quantity = installments.quantity, let amount = installments.amount else { return nil }
         return "[Dummy] \(String(quantity))x $ \(String(format: "%.2f", amount))"
+    }
+    
+    private func getRating(calification: Double?, starCount: Int) -> Double {
+        guard let calification = calification else { return 0 }
+        return calification * Double(starCount)
     }
 }

@@ -60,12 +60,8 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Nexa-Light.otf</string>
 		<string>Poppins-Regular.otf</string>
-		<string>Nexa-Bold.otf</string>
 		<string>Poppins-Medium.otf</string>
-		<string>BebasNeue-Bold.otf</string>
-		<string>BebasNeue-Regular.otf</string>
 		<string>Poppins-SemiBold.otf</string>
 	</array>
 	<key>NSAppTransportSecurity</key>

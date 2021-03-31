@@ -17,7 +17,7 @@ class APIManager {
     
     // MARK: - Public methods
     
-    func call(type: EndPointType, params: Parameters? = nil, handler: @escaping (()?, _ error: AlertMessage?)->()) {
+    func call(type: EndPointType, params: Parameters? = nil, handler: @escaping (()?, _ error: (title: String, body: String)?)->()) {
         self.sessionManager.request(type.url,
                                     method: type.httpMethod,
                                     parameters: params,
@@ -35,7 +35,7 @@ class APIManager {
         }
     }
     
-    func call<T>(type: EndPointType, params: Parameters? = nil, handler: @escaping (T?, _ error: AlertMessage?)->()) where T: Codable {
+    func call<T>(type: EndPointType, params: Parameters? = nil, handler: @escaping (T?, _ error: (title: String, body: String)?)->()) where T: Codable {
         self.sessionManager.request(type.url,
                                     method: type.httpMethod,
                                     parameters: params,
@@ -63,12 +63,12 @@ class APIManager {
         self.retrier.numberOfRetries = 0
     }
     
-    private func parseApiError(data: Data?) -> AlertMessage {
+    private func parseApiError(data: Data?) -> (title: String, body: String) {
         let decoder = JSONDecoder()
         if let jsonData = data, let error = try? decoder.decode(NetworkError.self, from: jsonData) {
-            return AlertMessage(title: "error_alert_title".localized, body: error.key ?? error.message)
+            return (title: "error_title".localized, body: error.key ?? error.message)
         }
-        return AlertMessage(title: "error_alert_title".localized, body: "generic_error_message".localized)
+        return (title: "error_title".localized, body: "error_unknown".localized)
     }
     
     // MARK: - Initialization

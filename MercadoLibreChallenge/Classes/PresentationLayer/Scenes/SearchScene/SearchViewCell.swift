@@ -97,7 +97,8 @@ class SearchViewCell: UITableViewCell, CellConfigurable {
             activityIndicator.centerXAnchor.constraint(equalTo: self.itemImageView.centerXAnchor)
         ])
         
-        self.itemImageView.sd_setImage(with: URL(string: viewModel.thumbnail), placeholderImage: UIImage(named: ""), options: .scaleDownLargeImages) { (a, b, c, d) in
+        self.itemImageView.contentMode = .scaleAspectFit
+        self.itemImageView.sd_setImage(with: URL(string: viewModel.thumbnail), placeholderImage: UIImage(named: ""), options: .allowInvalidSSLCertificates) { (a, b, c, d) in
             activityIndicator.stopAnimating()
         }
     }

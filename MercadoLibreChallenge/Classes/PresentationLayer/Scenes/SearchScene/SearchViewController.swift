@@ -91,10 +91,17 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
                 weakSelf.tableView.reloadData()
             }
         })
+        
+        viewModel?.outputs.error.bind({ [weak self] (title, body) in
+            guard let weakSelf = self else { return }
+            DispatchQueue.main.async {
+                weakSelf.showAlertWith(title: title, body: body)
+            }
+        })
     }
     
     // MARK: - Actions
-//    signUpButton.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
+
     @objc fileprivate func actionSearch(_ sender: UIButton){
         viewModel?.inputs.search(text: "Motorola%20G6")
     }
@@ -136,8 +143,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension SearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        if searchController.searchBar.text!.count > 2 {
-            viewModel.inputs.search(text: searchController.searchBar.text!)
-        }
+        viewModel.inputs.search(text: searchController.searchBar.text!)
     }
 }

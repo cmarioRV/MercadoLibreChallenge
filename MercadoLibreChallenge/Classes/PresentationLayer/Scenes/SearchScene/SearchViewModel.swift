@@ -16,6 +16,7 @@ internal protocol SearchViewModelOutputs {
     var isBussy: Dynamic<Bool> { get }
     var cellViewModels: Dynamic<[SearchViewCellViewModel]> { get }
     var searchResults: Dynamic<[Results]> { get }
+    var error: Dynamic<(title: String, message: String)> { get }
 }
 
 internal protocol SearchViewModelType {
@@ -31,6 +32,7 @@ internal final class SearchViewModel: BaseViewModel, SearchViewModelType, Search
     var isBussy = Dynamic(false)
     var cellViewModels: Dynamic<[SearchViewCellViewModel]>
     var searchResults: Dynamic<[Results]>
+    var error: Dynamic<(title: String, message: String)>
     
     private let connectivity: Connectivity = Connectivity()
     private let itemServices: ItemServices!
@@ -39,6 +41,7 @@ internal final class SearchViewModel: BaseViewModel, SearchViewModelType, Search
         self.itemServices = itemServices
         self.cellViewModels = Dynamic([SearchViewCellViewModel]())
         self.searchResults = Dynamic([Results]())
+        self.error = Dynamic(("", ""))
         connectivity.startNotifier()
     }
     
@@ -47,10 +50,29 @@ internal final class SearchViewModel: BaseViewModel, SearchViewModelType, Search
     }
     
     func search(text: String) {
+        if text.count <= 2 { return }
+        
         if isBussy.value { return }
         isBussy.value = true
         
-        itemServices.search(params: ["q" : text]) { [weak self] (searchResult, alertMessage) in
+        connectivity.checkConnectivity { [weak self] (connectivity) in
+            guard let weakSelf = self else {
+                self?.isBussy.value = false
+                return }
+            
+            switch connectivity.status {
+            case .notConnected, .connectedViaWiFiWithoutInternet, .connectedViaCellularWithoutInternet:
+                weakSelf.error.value = weakSelf.handleError(error: NetworkingErrors.connectionError)
+                weakSelf.isBussy.value = false
+                return
+            default:
+                weakSelf.proceedToSearch(text: text)
+            }
+        }
+    }
+    
+    private func proceedToSearch(text: String) {
+        itemServices.search(params: ["q" : text]) { [weak self] (searchResult, message) in
             guard let weakSelf = self else { return }
             if let searchResult = searchResult {
                 if let result = searchResult.results {
@@ -58,7 +80,9 @@ internal final class SearchViewModel: BaseViewModel, SearchViewModelType, Search
                 }
                 weakSelf.cellViewModels.value = weakSelf.buildCellViewModels(searchResult: searchResult)
             } else {
-                weakSelf.alertMessage.value = alertMessage!
+                if let message = message {
+                    weakSelf.error.value = (message.title, message.body)
+                }
             }
             
             weakSelf.isBussy.value = false

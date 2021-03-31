@@ -25,7 +25,6 @@ final class SearchCoordinator: BaseCoordinator, CoordinatorFinishOutput {
         searchViewController.onShowSearchDetail = { [unowned self] result in
             self.showSearchDetailViewController(result: result)
         }
-//        self.router.push(searchViewController)
         self.router.setRootModule(searchViewController, hideBar: false)
     }
     
